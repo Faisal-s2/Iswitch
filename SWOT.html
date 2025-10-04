@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SWOT — Stylish Cards</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f6faf8;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --shadow: 0 6px 18px rgba(16,24,40,0.08);
+      --radius:16px;
+      font-family: 'Poppins', sans-serif;
+
+      --accent-s:#dbeef6;
+      --accent-w:#f3f7ef;
+      --accent-o:#f7f3fb;
+      --accent-t:#fff7ed;
+
+      --color-s:#08324a;
+      --color-w:#16361a;
+      --color-o:#3d1b5a;
+      --color-t:#7a3d00;
+    }
+
+    html,body{height:100%;background:var(--bg);margin:0;padding:28px 20px;color:#0f172a}
+    .container{max-width:1100px;margin:0 auto}
+    h1{font-size:22px;margin:0 0 18px;text-align:center}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:20px;
+      box-shadow:var(--shadow);
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      transition:transform .2s ease,box-shadow .2s ease;
+      position:relative;
+    }
+    .card:hover{transform:translateY(-6px);box-shadow:0 16px 36px rgba(16,24,40,0.15)}
+
+    .card-head{display:flex;align-items:center;gap:12px;justify-content:center;flex-direction:column;text-align:center}
+    .badge{width:56px;height:56px;border-radius:12px;display:grid;place-items:center;font-weight:700;font-size:22px}
+    .badge.s{background:linear-gradient(145deg,var(--accent-s),#c9e4f3);color:var(--color-s)}
+    .badge.w{background:linear-gradient(145deg,var(--accent-w),#e2f0db);color:var(--color-w)}
+    .badge.o{background:linear-gradient(145deg,var(--accent-o),#e8e1f7);color:var(--color-o)}
+    .badge.t{background:linear-gradient(145deg,var(--accent-t),#ffe9d2);color:var(--color-t)}
+    .title{font-size:16px;font-weight:600}
+    .subtitle{font-size:13px;color:var(--muted)}
+
+    .content{flex:1;overflow:auto;display:flex;flex-direction:column;gap:6px}
+    .editable{min-height:84px;padding:8px;border-radius:10px;border:1px dashed rgba(15,23,42,0.06);background:transparent;white-space:pre-line;line-height:1.5;transition:background .18s ease}
+    .editable:hover{background:rgba(15,23,42,0.03)}
+
+    .tools{display:flex;gap:8px;align-items:center;justify-content:center}
+    .btn{padding:8px 10px;border-radius:10px;border:0;background:#0f172a;color:white;font-size:13px;cursor:pointer}
+    .btn.ghost{background:transparent;color:var(--muted);border:1px solid rgba(15,23,42,0.04)}
+    .small{padding:6px 8px;font-size:12px}
+
+    footer.hint{text-align:center;color:var(--muted);font-size:13px;margin-top:14px}
+
+    @media (max-width:520px){body{padding:16px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>SWOT Analysis — Stylish & Interactive</h1>
+    <div class="grid">
+      <section class="card" data-key="S">
+        <div class="card-head">
+          <div class="badge s">S</div>
+          <div>
+            <div class="title">Strengths</div>
+            <div class="subtitle">What are you best at?</div>
+          </div>
+        </div>
+        <div class="content">
+          <div class="editable" contenteditable="true">✔ Responsible team members
+✔ Keeping up with the deadline
+✔ Great vibes between members
+✔ Strong communication skills
+✔ High adaptability
+</div>
+        </div>
+        <div class="tools">
+          <button class="btn small" onclick="addBullet(this)">+ Add Item</button>
+          <button class="btn ghost small" onclick="clearArea(this)">Clear</button>
+        </div>
+      </section>
+
+      <section class="card" data-key="W">
+        <div class="card-head">
+          <div class="badge w">W</div>
+          <div>
+            <div class="title">Weaknesses</div>
+            <div class="subtitle">What needs improvement?</div>
+          </div>
+        </div>
+        <div class="content">
+          <div class="editable" contenteditable="true">⚠ Uncoordinated team
+⚠ Late responses to messages
+⚠ Language barrier between team members
+⚠ Inconsistent documentation
+⚠ Limited technical expertise
+</div>
+        </div>
+        <div class="tools">
+          <button class="btn small" onclick="addBullet(this)">+ Add Item</button>
+          <button class="btn ghost small" onclick="clearArea(this)">Clear</button>
+        </div>
+      </section>
+
+      <section class="card" data-key="O">
+        <div class="card-head">
+          <div class="badge o">O</div>
+          <div>
+            <div class="title">Opportunities</div>
+            <div class="subtitle">Trends or external chances</div>
+          </div>
+        </div>
+        <div class="content">
+          <div class="editable" contenteditable="true">🌟 Better prices
+🌟 Clarity for ordinary people
+🌟 Better prices for our services
+🌟 Expanding online reach
+🌟 Partnerships with other companies
+</div>
+        </div>
+        <div class="tools">
+          <button class="btn small" onclick="addBullet(this)">+ Add Item</button>
+          <button class="btn ghost small" onclick="clearArea(this)">Clear</button>
+        </div>
+      </section>
+
+      <section class="card" data-key="T">
+        <div class="card-head">
+          <div class="badge t">T</div>
+          <div>
+            <div class="title">Threats</div>
+            <div class="subtitle">What could hinder progress?</div>
+          </div>
+        </div>
+        <div class="content">
+          <div class="editable" contenteditable="true">🔻 Team breakup
+🔻 Lack of experience
+🔻 Strong competition
+🔻 Market fluctuations
+🔻 Changing regulations
+</div>
+        </div>
+        <div class="tools">
+          <button class="btn small" onclick="addBullet(this)">+ Add Item</button>
+          <button class="btn ghost small" onclick="clearArea(this)">Clear</button>
+        </div>
+      </section>
+    </div>
+
+    <footer class="hint">Click inside any card to edit text — content can be copied directly into your project</footer>
+  </div>
+
+  <script>
+    function addBullet(btn){
+      const card = btn.closest('.card');
+      const area = card.querySelector('.editable');
+      const text = prompt('Add new item:');
+      if(text && text.trim()){
+        area.textContent = (area.textContent.trim().length? area.textContent + '\n' : '') + text.trim();
+        placeCaretToEnd(area);
+      }
+    }
+    function clearArea(btn){
+      if(confirm('Clear this card content?')){
+        btn.closest('.card').querySelector('.editable').textContent = '';
+      }
+    }
+    function placeCaretToEnd(el){
+      el.focus();
+      if(typeof window.getSelection != "undefined" && typeof document.createRange != "undefined"){
+        const range = document.createRange();
+        range.selectNodeContents(el);
+        range.collapse(false);
+        const sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+      }
+    }
+  </script>
+</body>
+</html>
