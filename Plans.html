@@ -3,319 +3,251 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>iSwitch Business Plan & Feasibility Study</title>
+<title>iSwitch Project Plans</title>
 <style>
-    :root{
-        --deep-teal:#004b4f;
-        --dark-mint:#007a74;
-        --gold:#c6a45b;
-        --text:#e9e9e9;
-        --panel-bg: rgba(25,35,35,0.9);
-        --background1:#e7d8b1;
-        --background2:#0e5255;
-    }
+  /* خلفية متدرجة راقية */
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #6a00f4, #00d4d8);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+  }
 
-    body{
-        margin:0;
-        font-family:"Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-        background: linear-gradient(135deg, var(--background1) 0%, var(--background2) 100%);
-        color:var(--text);
-        line-height:1.7;
-    }
+  h1 {
+    font-size: 2.4em;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  }
 
-    .container{
-        max-width:1000px;
-        margin:30px auto;
-        padding:20px;
-    }
+  /* أزرار التبديل */
+  .buttons {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
 
-    header{
-        background: var(--panel-bg);
-        padding:44px 20px;
-        border-radius:12px;
-        text-align:center;
-        box-shadow:0 6px 20px rgba(0,0,0,0.4);
-        border-bottom:3px solid var(--gold);
-        margin-bottom:20px;
-    }
+  button {
+    background: linear-gradient(135deg, #8b00ff, #00d4d8);
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
 
-    header h1{
-        margin:0 0 6px 0;
-        color:var(--gold);
-        font-size:2.3rem;
-    }
+  button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
 
-    header p{
-        margin:0;
-        color:#dcdcdc;
-        font-size:1rem;
-    }
+  .container {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+    padding: 40px;
+    max-width: 1000px;
+    width: 100%;
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+    transition: opacity 0.5s ease;
+  }
 
-    /* Tabs */
-    .tabs{
-        display:flex;
-        justify-content:center;
-        margin-bottom:20px;
-        flex-wrap:wrap;
-    }
+  h2 {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 5px;
+    margin-top: 30px;
+  }
 
-    .tab-button{
-        background: var(--panel-bg);
-        color:var(--text);
-        border:none;
-        padding:12px 24px;
-        margin:4px;
-        cursor:pointer;
-        font-size:1rem;
-        border-radius:8px;
-        box-shadow:0 4px 10px rgba(0,0,0,0.3);
-        transition:0.3s;
-    }
+  ul {
+    list-style: disc;
+    margin-left: 25px;
+  }
 
-    .tab-button:hover{
-        background: var(--dark-mint);
-    }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+  }
 
-    .tab-button.active{
-        background: var(--gold);
-        color:#1a1a1a;
-    }
+  table th, table td {
+    padding: 10px;
+    text-align: left;
+  }
 
-    section.card{
-        background: var(--panel-bg);
-        margin:20px 0;
-        padding:26px 28px;
-        border-radius:12px;
-        box-shadow:0 6px 18px rgba(0,0,0,0.35);
-        display:none;
-    }
+  table th {
+    background: rgba(255, 255, 255, 0.2);
+  }
 
-    section.card.active{
-        display:block;
-    }
+  table tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.08);
+  }
 
-    h2{
-        color:var(--gold);
-        margin:0 0 12px 0;
-        font-size:1.3rem;
-        padding-bottom:8px;
-        border-bottom:1px solid rgba(198,164,91,0.3);
-    }
+  .footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 0.9em;
+    opacity: 0.8;
+  }
 
-    h3{
-        color:var(--dark-mint);
-        margin:18px 0 8px 0;
-        font-size:1rem;
-    }
-
-    p{
-        margin:8px 0;
-    }
-
-    ul{
-        margin:8px 0 12px 20px;
-    }
-
-    li{
-        margin-bottom:8px;
-    }
-
-    .muted{
-        color:#b5b5b5;
-        font-size:0.95rem;
-    }
-
-    footer{
-        margin:30px 0 60px 0;
-        text-align:center;
-        color:#ddd;
-        font-size:0.9rem;
-        background: var(--panel-bg);
-        padding:14px 10px;
-        border-radius:10px;
-        border-top:2px solid rgba(198,164,91,0.3);
-    }
-
-    @media (max-width:640px){
-        header{ padding:28px 14px; }
-        .container{ padding:0 12px; }
-        header h1{ font-size:1.7rem; }
-    }
+  /* الإخفاء */
+  .hidden {
+    display: none;
+  }
 </style>
 </head>
 <body>
-<div class="container">
-    <header>
-        <h1>iSwitch Project</h1>
-        <p>Business Plan & Feasibility Study — Digital Moving Services in Slovakia</p>
-    </header>
 
-    <div class="tabs">
-        <button class="tab-button active" onclick="showTab('business')">Business Plan</button>
-        <button class="tab-button" onclick="showTab('feasibility')">Feasibility Study</button>
-    </div>
+  <h1>📦 iSwitch Project Plans</h1>
 
-    <!-- Business Plan Section -->
-    <section id="business" class="card active">
-        <h2>1. Main Project Goal</h2>
-        <p>Our main goal is to create exceptional moving services for people living in Slovakia. We believe that everything we do should be simple without any stressful matter so that everyone could be satisfied.</p>
+  <div class="buttons">
+    <button id="btnFeasibility">Feasibility Study</button>
+    <button id="btnBusiness">Business Plan</button>
+  </div>
 
-        <h2>2. Secondary Goals</h2>
-        <h3>2.1 Technological Goals</h3>
-        <ul>
-            <li>Within 6 months we want to launch an online website and mobile app that allows customers to get instant quotes, track their moving van in real time and manage bookings digitally.</li>
-        </ul>
-        <h3>2.2 Operational Goals</h3>
-        <ul>
-            <li>Establish a fully functioning moving service with trained staff, modern equipment, and a digital booking system within the first 6 months after launching the online website and mobile app.</li>
-        </ul>
-        <h3>2.3 Marketing Goals</h3>
-        <ul>
-            <li>Within 8 months after official establishment we want to achieve first 1000th customer milestone.</li>
-            <li>Our strategy is to invest in digital marketing especially to collaborate with some influencers, so we could aim more for the young couples that are moving to their new homes.</li>
-        </ul>
+  <!-- خطة Feasibility -->
+  <div id="feasibility" class="container">
+    <h2>Feasibility Study — iSwitch Project</h2>
+    <p><strong>Main goal:</strong> To create exceptional, simple, and stress-free moving services for customers living in Slovakia.</p>
+    <p><strong>Current Status:</strong> The moving services market in Slovakia's major cities is growing, but existing providers fail to meet demand for digital convenience (simple online booking, payments, tracking).</p>
+    <p><strong>Project Origin:</strong> Rooted in identifying this gap: need for a technologically advanced, transparent, and reliable moving service.</p>
+    <p><strong>Main Goal:</strong> Establish a leading digital platform for relocation services that minimizes customer stress through transparency and reliability.</p>
 
-        <h2>3. Project Benefits</h2>
-        <h3>3.1 For Customers</h3>
-        <ul>
-            <li>Reliable services with professionals in their field with great insurance coverage.</li>
-            <li>Transparent pricing and real-time tracking of trucks.</li>
-            <li>Hassle-free booking through our easy to use website or app.</li>
-        </ul>
-        <h3>3.2 For Society / Environment</h3>
-        <ul>
-            <li>Using recyclable packaging materials and efficient route planning to reduce carbon footprint.</li>
-            <li>Many job opportunities and experiences in this field.</li>
-        </ul>
-        <h3>3.3 For the Company</h3>
-        <ul>
-            <li>Opportunity to build strong brand and loyal customers through digital convenience.</li>
-            <li>Efficiency through route optimization and digital management are going to enlarge our marging potential.</li>
-        </ul>
+    <h2>2. Market Analysis, Marketing Strategy, and Target Group</h2>
+    <ul>
+      <li>Young couples and families (25–55) in major cities (starting with Košice).</li>
+      <li>Small and Medium-sized Enterprises (SMEs) who value time and convenience.</li>
+    </ul>
+    <ul>
+      <li>Local competitors often offer worse pricing or have smaller network.</li>
+      <li>iSwitch competitive advantage: technological approach, transparency, sustainability.</li>
+      <li>Investments in digital marketing, collaborations with influencers targeting young couples.</li>
+    </ul>
 
-        <h2>4. Target Customers</h2>
-        <ul>
-            <li>Young couples and families relocating from their parents.</li>
-            <li>Young students moving from their home for studies.</li>
-            <li>Small and medium-sized businesses relocating offices or equipment.</li>
-            <li>Customers who value time, convenience and reliability for a great price.</li>
-        </ul>
-        <h3>4.1 Demographics</h3>
-        <ul>
-            <li>Age mostly ranging from 25–55.</li>
-            <li>Urban areas (starting in Košice but later expanding into other “big” cities).</li>
-            <li>All income levels.</li>
-            <li>Everyone using electronic devices.</li>
-        </ul>
+    <h2>3. Financial Plan and Project Analysis</h2>
+    <ul>
+      <li>Core moving services (residential)</li>
+      <li>Business relocation contracts (B2B)</li>
+      <li>Premium services (packing/unpacking, storage, cleaning)</li>
+    </ul>
 
-        <h2>5. Market & Competition Analysis</h2>
-        <h3>5.1 Market Overview</h3>
-        <ul>
-            <li>In today's market the moving industry is always expanding especially in the big cities where people are constantly switching places mostly due to career changes, rental flexibility, and property market dynamics.</li>
-            <li>Customers expect digital convenience(simple booking, online payments, progress tracking).</li>
-        </ul>
-        <h3>5.2 Competitors</h3>
-        <ul>
-            <li>Local moving companies (Sťahovanie-Express, ProfiMove, stahovat.sk…) – worse prices and smaller moving network.</li>
-        </ul>
-        <h3>5.3 iSwitch Competitive Advantage</h3>
-        <ul>
-            <li>Serious web and app tech approach (instant pricing list without any registration, live truck tracing, simple yet effective design).</li>
-            <li>Transparent pricing: No hidden fees – clear price breakdown per load.</li>
-            <li>Customer care: 24/7 support, insurance, and satisfaction guarantee.</li>
-            <li>Sustainability: Eco-friendly packaging and route optimization to reduce emissions.</li>
-        </ul>
+    <table>
+      <tr><th>Item</th><th>Estimated Cost (€)</th></tr>
+      <tr><td>Moving equipment</td><td>135,000€</td></tr>
+      <tr><td>Office setup & licenses</td><td>15,000€</td></tr>
+      <tr><td>Marketing & branding</td><td>5,000€</td></tr>
+      <tr><td>Working capital</td><td>20,000€</td></tr>
+      <tr><th>Total Initial Investment</th><th>≈175,000€</th></tr>
+    </table>
 
-        <h2>6. Financial Viability & Growth Potential</h2>
-        <ul>
-            <li>Initial funding: We are truly dependent on potential investors who are willing to make this idea possible</li>
-        </ul>
-        <h3>6.1 Revenue Streams</h3>
-        <ul>
-            <li>Moving services</li>
-            <li>Business relocation contracts</li>
-            <li>Premium services (packing/unpacking, storage, cleaning)</li>
-        </ul>
-        <p>Profitability target: Break-even within 20–24 months through repeat customers, partnerships with real estate agencies and people’s reviews.</p>
+    <ul>
+      <li>Projected Year 1 Revenue: 220,000€</li>
+      <li>Net Profit Margin (Year 1): ~10%</li>
+      <li>Break-even Point: ~10 months after official establishment</li>
+      <li>Funding Source: 70% Investors, 30% Bank loan</li>
+    </ul>
 
-        <h2>7. Summary of Project Viability</h2>
-        <p>iSwitch offers a scalable and competitive solution to a common problem - moving homes. The project is viable because it combines: Cheap and reliable moving services, digital convenience (app + tracking), strong focus on customer experience and potential expansion to new cities and many business to business (B2B) partnerships.</p>
-    </section>
+    <h2>4. Project Implementation Plan</h2>
+    <ul>
+      <li>Technical Implementation: Launch website/app in 12 months.</li>
+      <li>Operational Implementation: Staff hiring, equipment setup, insurance.</li>
+      <li>Marketing Implementation: Achieve 2,000 customers within 1 year.</li>
+    </ul>
 
-    <!-- Feasibility Study Section -->
-    <section id="feasibility" class="card">
-        <h2>Feasibility Study — iSwitch Project</h2>
+    <h2>5. Technical & Operational Analysis</h2>
+    <ul>
+      <li>Location: Košice</li>
+      <li>Fleet: 2 medium-sized moving trucks</li>
+      <li>Staffing: 1 manager, 2 drivers, 4 movers, 1 admin</li>
+      <li>Equipment: Eco-friendly materials, GPS systems</li>
+      <li>Technology: Online booking, real-time tracking</li>
+    </ul>
 
-        <h2>1. Introduction and Project Information</h2>
-        <p><strong>Main goal:</strong> To create exceptional, simple, and stress-free moving services for customers living in Slovakia.</p>
-        <p class="muted"><strong>Current Status:</strong> The moving services market in Slovakia's major cities is growing, but existing providers fail to meet demand for digital convenience (simple online booking, payments, tracking).</p>
-        <p class="muted"><strong>Project Origin:</strong> Rooted in identifying this gap: need for a technologically advanced, transparent, and reliable moving service.</p>
-        <p><strong>Main Goal:</strong> Establish a leading digital platform for relocation services that minimizes customer stress through transparency and reliability.</p>
+    <h2>6. Risk Analysis & Mitigation</h2>
+    <ul>
+      <li><strong>Technical Risk:</strong> Delay — mitigated by testing.</li>
+      <li><strong>Competition Risk:</strong> Pricing — mitigated by quality.</li>
+      <li><strong>Financial Risk:</strong> Funding — mitigated by CAPEX control.</li>
+    </ul>
 
-        <h2>2. Market Analysis, Marketing Strategy, and Target Group</h2>
-        <h3>Target Group Identification</h3>
-        <ul>
-            <li>Young couples and families (25–55) in major cities (starting with Košice).</li>
-            <li>Small and Medium-sized Enterprises (SMEs) who value time and convenience.</li>
-        </ul>
+    <h2>7. Conclusion</h2>
+    <p>The iSwitch project demonstrates high viability through transparency, technology, sustainability, and strong market potential.</p>
 
-        <h3>Market Analysis</h3>
-        <ul>
-            <li>Local competitors often offer worse pricing or have smaller network.</li>
-            <li>iSwitch competitive advantage: technological approach, transparency, sustainability.</li>
-        </ul>
+    <div class="footer">© 2025 iSwitch — Feasibility Study</div>
+  </div>
 
-        <h3>Marketing Strategy</h3>
-        <ul>
-            <li>Investments in digital marketing, collaborations with influencers targeting young couples.</li>
-        </ul>
+  <!-- خطة Business -->
+  <div id="business" class="container hidden">
+    <h2>Business Plan — iSwitch Project</h2>
+    <p><strong>Main Project goal:</strong> Create exceptional moving services for people in Slovakia with simplicity and satisfaction.</p>
 
-        <h2>3. Financial Plan and Project Analysis</h2>
-        <h3>Revenue Streams</h3>
-        <ul>
-            <li>Core moving services (residential)</li>
-            <li>Business relocation contracts (B2B)</li>
-            <li>Premium services (packing/unpacking, storage, cleaning)</li>
-        </ul>
-        <h3>Economic Evaluation</h3>
-        <ul>
-            <li>Dependent on initial funding from investors</li>
-            <li>Profitability target: Break-even within 20–24 months through route optimization, digital management, and customer loyalty</li>
-        </ul>
+    <h2>2. Secondary Goals</h2>
+    <ul>
+      <li><strong>Technological goals:</strong> Launch online website & app within 6 months for instant quotes, tracking, and booking.</li>
+      <li><strong>Operational goals:</strong> Fully functional service with trained staff and digital management within 6 months.</li>
+      <li><strong>Marketing goals:</strong> Reach 1,000 customers within 10 months via digital marketing and influencer collaboration.</li>
+    </ul>
 
-        <h2>4. Project Implementation Plan</h2>
-        <ul>
-            <li>Technical Implementation: Launch website/app in 6 months, instant quotes and booking management</li>
-            <li>Operational Implementation: Staff hiring, equipment, insurance processes within 6 months</li>
-            <li>Marketing Implementation: Achieve 1,000 customers milestone within 8 months</li>
-        </ul>
+    <h2>3. Project Benefits</h2>
+    <ul>
+      <li><strong>For customers:</strong> Reliable, transparent, insured, and hassle-free services.</li>
+      <li><strong>For environment:</strong> Eco materials, optimized routes, new job opportunities.</li>
+      <li><strong>For company:</strong> Brand strength, loyalty, and margin expansion through efficiency.</li>
+    </ul>
 
-        <h2>5. Risk Analysis & Mitigation</h2>
-        <ul>
-            <li>Technical Risk: Delay/integration issues — mitigation via iterative testing</li>
-            <li>Competition Risk: Aggressive pricing — mitigation via emphasizing non-price advantages</li>
-            <li>Financial Risk: Dependence on initial funding — mitigation via strict CAPEX control and contingency plan</li>
-        </ul>
+    <h2>4. Target Customers</h2>
+    <ul>
+      <li>Young couples, families, students, and SMEs relocating offices.</li>
+      <li><strong>Demographics:</strong> Ages 25–55, urban areas (starting Košice), all income levels.</li>
+    </ul>
 
-        <h2>6. Conclusion</h2>
-        <p>The iSwitch project demonstrates high viability, combining technological convenience, transparency, economic soundness, job creation, and sustainable development.</p>
-    </section>
+    <h2>5. Market & Competition</h2>
+    <ul>
+      <li><strong>Market:</strong> Constantly expanding in big cities with demand for digital convenience.</li>
+      <li><strong>Competitors:</strong> Sťahovanie-Express, ProfiMove, stahovat.sk – smaller, less efficient.</li>
+      <li><strong>iSwitch advantage:</strong> No-registration instant pricing, real-time tracking, 24/7 support, sustainability focus.</li>
+    </ul>
 
-    <footer>
-        © 2025 iSwitch — Business Plan & Feasibility Study
-    </footer>
-</div>
+    <h2>6. Financial Viability & Growth</h2>
+    <ul>
+      <li>Funding: Dependent on investors.</li>
+      <li>Revenue Streams: Moving, B2B relocation, premium services.</li>
+      <li>Break-even: 22 months via repeat customers & partnerships.</li>
+    </ul>
 
-<script>
-function showTab(tabId){
-    const tabs = document.querySelectorAll('.tab-button');
-    tabs.forEach(btn => btn.classList.remove('active'));
-    event.currentTarget.classList.add('active');
+    <h2>7. Summary</h2>
+    <p>iSwitch offers a scalable, digital, and sustainable moving service with strong potential for growth and expansion.</p>
 
-    const sections = document.querySelectorAll('section.card');
-    sections.forEach(sec => sec.classList.remove('active'));
-    document.getElementById(tabId).classList.add('active');
-}
-</script>
+    <div class="footer">© 2025 iSwitch — Business Plan</div>
+  </div>
+
+  <script>
+    const btnFeasibility = document.getElementById("btnFeasibility");
+    const btnBusiness = document.getElementById("btnBusiness");
+    const feasibility = document.getElementById("feasibility");
+    const business = document.getElementById("business");
+
+    btnFeasibility.addEventListener("click", () => {
+      feasibility.classList.remove("hidden");
+      business.classList.add("hidden");
+    });
+
+    btnBusiness.addEventListener("click", () => {
+      business.classList.remove("hidden");
+      feasibility.classList.add("hidden");
+    });
+  </script>
+
 </body>
 </html>
