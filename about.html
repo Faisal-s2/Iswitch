@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Team</title>
+  <style>
+    :root {
+      --primary: #8a3ffc;       /* بنفسجي جميل */
+      --secondary: #20e3b2;     /* تركوازي */
+      --card-bg: rgba(255, 255, 255, 0.15);
+      --text-dark: #1e1e1e;
+      --text-light: #f5f5f5;
+      --transition: 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-light);
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      min-height: 100vh;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* HEADER */
+    header {
+      width: 100%;
+      padding: 20px 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    header .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-decoration: none;
+      color: #fff;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    nav ul li a::after {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--secondary);
+      transition: var(--transition);
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    /* MAIN SECTION */
+    .about-container {
+      text-align: center;
+      padding: 100px 20px 80px;
+      max-width: 1200px;
+    }
+
+    .about-container h2 {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 90px;
+      background: linear-gradient(90deg, #fff, var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* TEAM TREE */
+    .team-tree {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 80px;
+      position: relative;
+    }
+
+    .team-level {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 50px;
+      position: relative;
+    }
+
+    .team-level::after {
+      content: "";
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      width: 2px;
+      height: 50px;
+      background: rgba(255,255,255,0.3);
+      transform: translateX(-50%);
+    }
+
+    .team-level:first-child::after {
+      display: none;
+    }
+
+    /* TEAM CARD */
+    .team-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 35px 25px;
+      width: 300px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.2);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      transition: var(--transition);
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInUp 1s forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .team-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+
+    .team-card .photo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      overflow: hidden;
+      border: 3px solid var(--secondary);
+      box-shadow: 0 0 25px rgba(32,227,178,0.3);
+      transition: var(--transition);
+    }
+
+    .team-card:hover .photo {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(32,227,178,0.5);
+    }
+
+    .team-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .team-card h3 {
+      font-size: 1.3rem;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .team-card h4 {
+      color: var(--secondary);
+      font-size: 1rem;
+      margin-bottom: 15px;
+      letter-spacing: 0.5px;
+    }
+
+    .team-card p {
+      color: rgba(255,255,255,0.85);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Manager Highlight */
+    .manager {
+      border: 2px solid var(--secondary);
+      box-shadow: 0 0 25px rgba(32,227,178,0.5);
+      position: relative;
+    }
+
+    .manager::before {
+      content: "";
+      position: absolute;
+      inset: -3px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      z-index: -1;
+      filter: blur(15px);
+      opacity: 0.7;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .team-level {
+        gap: 30px;
+      }
+      .team-card {
+        width: 85%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="#" class="logo">Iswitch</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="about-container">
+    <h2>Our Team</h2>
+
+    <div class="team-tree">
+      <!-- Manager -->
+      <div class="team-level">
+        <div class="team-card manager">
+          <div class="photo">
+            <img src="img/Faisal.jpg" alt="Faisal Mahfoud">
+          </div>
+          <h3>Faisal Mahfoud</h3>
+          <h4>Team Manager</h4>
+          <p>My name is Faisal Mahfoud, I am a Syrian-Slovak. I studied at the Secondary School of Informatics in Tartus, Syria, and since then I have been developing my technical knowledge mainly through self-study.</p>
+        </div>
+      </div>
+
+      
+      <div class="team-level">
+        <!-- Team creative lead -->
+        <div class="team-card">
+          <div class="photo">
+            <img src="img/Ondrej.jpg" alt="Ondrej Thomas">
+          </div>
+          <h3>Ondrej Thomas</h3>
+          <h4>Creative Lead</h4>
+          <p>My name is Ondrej Thomas, a Slovak student from the Christian Gymnasium in Vranov nad Topľou. I’ve always been fascinated by modern technologies and their constant evolution. In my free time, I enjoy playing computer games, doing sports, and learning new things.</p>
+        </div>
+        <!-- Specialists -->
+        <div class="team-card">
+          <div class="photo">
+            <img src="img/Shumyliak_Pavlo.png" alt="Pavlo Shumylyak">
+          </div>
+          <h3>Pavlo Shumylyak</h3>
+          <h4>IT specialist</h4>
+          <p>My name is Pavlo Shumylyak, my role in the team is IT specialist.</p>
+        </div>
+
+        <div class="team-card">
+          <div class="photo">
+            <img src="img/Andrii.jpg" alt="Andrii Vitiuk">
+          </div>
+          <h3>Andrii Vitiuk</h3>
+          <h4>IT specialist</h4>
+          <p>My name is Andrii Vituik, I am Ukrainian and I work as an IT specialist. I studied web design courses and additionally taught myself programming.</p>
+        </div>
+
+        <div class="team-card">
+          <div class="photo">
+            <img src="img/Denys.jpg" alt="Denys Berezhetskyi">
+          </div>
+          <h3>Denys Berezhetskyi</h3>
+          <h4>Versatilist</h4>
+          <p>My name is Denys, I perform the role of versatilist in the team.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
