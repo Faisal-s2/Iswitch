@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iSwitch</title>
+    <!-- Google Fonts for elegance -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Gradient Background */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(145deg, #6a0dad, #40e0d0);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            width: 100%;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* iSwitch Main Title */
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 700;
+            color: #f1f1f1;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            background: linear-gradient(45deg, #ffffff, #f0e5ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: floatTitle 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes floatTitle {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-15px); }
+        }
+
+        /* Subtitle */
+        header p {
+            font-size: 1.5rem;
+            margin-top: 15px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.85);
+        }
+
+        /* Content Card */
+        .content {
+            max-width: 1000px;
+            width: 90%;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 50px 40px;
+            margin-top: -30px;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .content:hover {
+            transform: translateY(-5px);
+        }
+
+        .content h2 {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #fff;
+            border-bottom: 3px solid rgba(255,255,255,0.3);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 15px 10px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        th {
+            background: rgba(255,255,255,0.15);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        tr:hover td {
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: auto;
+            padding: 25px;
+            text-align: center;
+            background: rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+            width: 100%;
+            font-weight: 300;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 3.5rem;
+                letter-spacing: 5px;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .content h2 {
+                font-size: 2rem;
+            }
+
+            th, td {
+                padding: 10px 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>iSwitch</h1>
+        <p>Your move , Our care</p>
+    </header>
+
+    <div class="content">
+        <h2>iSwitch Project Risk Analysis</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Risk</th>
+                    <th>Description</th>
+                    <th>Probability</th>
+                    <th>Impact</th>
+                    <th>Mitigation Strategy</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Insufficient Investment Capital</td>
+                    <td>The project relies on investors (70% of funding) – delays or reduced financing may threaten launch.</td>
+                    <td>Medium</td>
+                    <td>High</td>
+                    <td>Diversify funding sources – contact more investors, prepare a backup plan (bank loan, crowdfunding).</td>
+                </tr>
+                <tr>
+                    <td>Technical Issues with Web and App</td>
+                    <td>iSwitch is based on digital platforms – system failures may disrupt operations or reduce customer trust.</td>
+                    <td>Medium</td>
+                    <td>High</td>
+                    <td>Conduct thorough testing before launch, regular updates, and provide 24/7 technical support.</td>
+                </tr>
+                <tr>
+                    <td>Poor Marketing Response / Low Demand</td>
+                    <td>Despite investments in influencers and online ads, the planned number of customers may not be reached.</td>
+                    <td>Medium</td>
+                    <td>Medium to High</td>
+                    <td>Continuously monitor campaign effectiveness, adjust targeting, strengthen B2B partnerships with real estate agencies.</td>
+                </tr>
+                <tr>
+                    <td>Operational Issues (Logistics, Staff)</td>
+                    <td>Lack of trained staff or inefficient moving organization may cause delays or complaints.</td>
+                    <td>Medium</td>
+                    <td>High</td>
+                    <td>Implement staff training, use GPS and route planning, establish internal quality standards.</td>
+                </tr>
+                <tr>
+                    <td>Competition and Price Pressure</td>
+                    <td>Local companies may lower prices or copy iSwitch's digital features.</td>
+                    <td>High</td>
+                    <td>Medium</td>
+                    <td>Maintain competitive advantage – transparent pricing, eco-friendly packaging, high-quality customer support.</td>
+                </tr>
+                <tr>
+                    <td>Economic Instability / Decreased Demand</td>
+                    <td>Economic downturn may reduce willingness to pay for premium services.</td>
+                    <td>Low to Medium</td>
+                    <td>Medium</td>
+                    <td>Offer flexible service packages, focus on cost efficiency, build customer loyalty.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        &copy; 2025 iSwitch | Faisal Mahfoud
+    </footer>
+</body>
+</html>
