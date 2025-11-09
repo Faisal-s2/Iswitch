@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iswitch Dashboard</title>
+  <style>
+    /* خلفية متدرجة بين البنفسجي والبيج */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #3f0e77, #0a54c2, #b99ac9);
+      background-size: 400% 400%;
+      animation: gradientFlow 14s ease infinite;
+      color: #2e2e3f;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* العنوان الرئيسي مع حركة طفو */
+    h1 {
+      font-size: 3.2em;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #ffffff;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      margin-bottom: 30px;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+
+    h2 {
+      font-size: 1.8em;
+      font-weight: 600;
+      color: #ffffff;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      text-align: center;
+      position: relative;
+    }
+
+    h2::after {
+      content: "";
+      width: 80px;
+      height: 3px;
+      background: rgba(255,255,255,0.35);
+      display: block;
+      margin: 10px auto 0 auto;
+      border-radius: 5px;
+    }
+
+    /* البطاقة الزجاجية */
+    .card {
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 16px;
+      width: 95%;
+      max-width: 1100px;
+      padding: 25px 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      animation: fadeIn 1.2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* الجدول */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      font-size: 0.95em;
+    }
+
+    th, td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+    }
+
+    th {
+      color: #ffffff;
+      background: rgba(255,255,255,0.2);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.85em;
+      font-weight: 600;
+    }
+
+    td {
+      color: #fefefe;
+      line-height: 1.6em;
+    }
+
+    tr:hover {
+      background: rgba(255,255,255,0.15);
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      transition: transform 0.4s ease;
+    }
+
+    /* موبايل */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.4em;
+      }
+      h2 {
+        font-size: 1.5em;
+      }
+      table, th, td {
+        font-size: 0.9em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Iswitch</h1>
+
+  <div class="card">
+    <h2>Quality Metrics</h2>
+    <table>
+      <tr>
+        <th>Metric</th>
+        <th>Description</th>
+        <th>Target Value</th>
+        <th>Reason</th>
+      </tr>
+      <tr>
+        <td>User Satisfaction Score (USS)</td>
+        <td>Measures how satisfied users are with the usability and design of the Iswitch platform.</td>
+        <td>Average rating above 4.5 / 5 in user surveys.</td>
+        <td>A high satisfaction score ensures that the platform is intuitive and enjoyable to use, reflecting strong UX design quality.</td>
+      </tr>
+      <tr>
+        <td>System Uptime (Availability Rate)</td>
+        <td>Percentage of time the Iswitch website is fully functional and accessible without downtime.</td>
+        <td>Maintain 99.5% uptime per month.</td>
+        <td>High availability demonstrates technical reliability and backend stability, ensuring continuous user access.</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>Test Scenarios</h2>
+    <table>
+      <tr>
+        <th>Test Name</th>
+        <th>Input / Steps</th>
+        <th>Expected Result</th>
+        <th>Reason for Test</th>
+      </tr>
+      <tr>
+        <td>Navigation Functionality Test</td>
+        <td>Click through all main menu items (SWOT, Gantt, Plans, About, Finance Plan, Risk Plan).</td>
+        <td>Each button redirects to the correct page without delay or error.</td>
+        <td>To verify that all website links and routes are correctly implemented.</td>
+      </tr>
+      <tr>
+        <td>Load Speed Test</td>
+        <td>Measure page load time using developer tools or an online testing platform.</td>
+        <td>Homepage and subpages load in under 2 seconds.</td>
+        <td>To confirm website performance optimization and smooth user experience.</td>
+      </tr>
+      <tr>
+        <td>Registration Form Validation Test</td>
+        <td>Fill in the registration form with various inputs (correct, incorrect, empty fields).</td>
+        <td>The form accepts only valid data formats and displays appropriate error messages when needed.</td>
+        <td>To ensure correct data handling and prevent registration errors.</td>
+      </tr>
+      <tr>
+        <td>Data Saving Test</td>
+        <td>Save a new dataset (e.g., project plan) and refresh the page.</td>
+        <td>The data remains stored in the database and reappears correctly after refresh.</td>
+        <td>To verify backend reliability and correct database communication.</td>
+      </tr>
+      <tr>
+        <td>Mobile Responsiveness Test</td>
+        <td>Open the Iswitch website on mobile and tablet devices.</td>
+        <td>The layout automatically adjusts to screen size without cutting off elements.</td>
+        <td>To ensure the website is fully responsive and accessible on all devices.</td>
+      </tr>
+      <tr>
+        <td>Security Access Test</td>
+        <td>Attempt to open restricted pages without logging in.</td>
+        <td>The system redirects unauthenticated users to the login page.</td>
+        <td>To ensure proper data protection and access control.</td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
