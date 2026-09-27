@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="Sql.css">
+<title>Startup Database Script</title>
+
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">Iswitch</div>
+            <div>Iswitch data-table</div>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <div class="badge">Database Assignment</div>
+        <h1>SQL Database Script</h1>
+        <p>
+            Startup database creation script including database creation,
+            table structure, sample records, and output query results.
+        </p>
+    </div>
+</section>
+
+<section class="script-section">
+    <div class="container">
+
+        <div class="card">
+
+            <div class="card-header">
+                <h2>startup_script.sql</h2>
+                <span class="status">● Verified</span>
+            </div>
+
+<pre><code>
+\restrict aUazp1vvKi6oc2eJQZPvh4vVw4bapRe8vV2AyNzxRk7u7qVlEYwNY4ooxlwnGcW
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET transaction_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+CREATE SCHEMA main;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+CREATE TABLE main.usr (
+    id integer,
+    name character varying(20),
+    lastname character varying(20),
+    mail character varying(50),
+    address character varying(100),
+    city character varying(20),
+    profesia character varying(50)
+);
+
+COPY main.usr (id, name, lastname, mail, address, city, profesia) FROM stdin;
+3	Olga	Fajnšmekrova	prefajnsmekrovtentim@gmail.com	Park Angelum	Kosice	HR
+0	Ruslan	Penkov	ruslan.penkov2007@gmail.com	Prazska 2	Kosice	DBA
+2	Jordan	Overtake	jordan.overtake@ukr.net	okolie banky č.2	Los Santos	Pravnik
+4	Ondrej	Tomas	ondrej.tomas@student.upjs.com	Horky	Vranov nad Toplou	HSE specialist
+1	Alexa	Kohracova	arga_majanan@gmail.com	namestie oslobotitelov	Kosice	šofer
+5	Roman	Haluska	roman.haluska1@upjs.sk	tulcik	Presov	DBA
+6	Jozef	Prles	jozef.prles23@gmail.com	Miami	USA	CFA
+8	Jozef	Prles	jozef.prles23@gmail.com	Miami	USA	Manager
+9	Marta	Juzna	marta.juzna@32	Raslavice	Presov	Upratovačka
+7	Sara	Novakova	saranovakova@gmail.com	Rakackeho22	Kosice	Stahovac
+\.
+
+GRANT ALL ON SCHEMA main TO "Roman";
+GRANT ALL ON SCHEMA main TO "Faisal";
+GRANT ALL ON SCHEMA main TO "Ondrej";
+
+GRANT ALL ON SCHEMA public TO cloudsqlsuperuser;
+GRANT USAGE ON SCHEMA public TO "Roman";
+GRANT USAGE ON SCHEMA public TO "Faisal";
+
+GRANT SELECT,INSERT,REFERENCES,DELETE,TRIGGER,TRUNCATE,UPDATE ON TABLE main.usr TO "Roman";
+GRANT SELECT,INSERT,REFERENCES,DELETE,TRIGGER,TRUNCATE,UPDATE ON TABLE main.usr TO "Faisal";
+GRANT SELECT,INSERT,REFERENCES,DELETE,TRIGGER,TRUNCATE,UPDATE ON TABLE main.usr TO "Ondrej";
+
+
+--
+-- Name: DEFAULT PRIVILEGES FOR TABLES; Type: DEFAULT ACL; Schema: main; Owner: -
+--
+
+ALTER DEFAULT PRIVILEGES FOR ROLE jormontora IN SCHEMA main GRANT SELECT,INSERT,DELETE,UPDATE ON TABLES TO "Roman";
+ALTER DEFAULT PRIVILEGES FOR ROLE jormontora IN SCHEMA main GRANT SELECT,INSERT,DELETE,UPDATE ON TABLES TO "Faisal";
+
+
+--
+-- PostgreSQL database dump complete
+--
+
+\unrestrict aUazp1vvKi6oc2eJQZPvh4vVw4bapRe8vV2AyNzxRk7u7qVlEYwNY4ooxlwnGcW
+</code></pre>
+
+        </div>
+
+        <div class="info-grid">
+
+            <div class="info-card">
+                <h3>Database</h3>
+                <p>startup_db</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Table</h3>
+                <p>customers</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Operations</h3>
+                <p>Create, Insert, Select</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>Database Systems • Startup Project • 2026</p>
+</footer>
+
+</body>
+</html>
