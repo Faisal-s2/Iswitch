@@ -146,3 +146,51 @@ footer{
         font-size:2rem;
     }
 }
+.preview-section {
+    width: 100%;
+    padding: 4rem 0;
+}
+
+.preview-card {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 18px;
+    border: 1px solid var(--border-color);
+    background: var(--light-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.window-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 20px;
+    background: #f8fafc;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.window-header span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.window-header span:nth-child(1) {
+    background: #ff5f57;
+}
+
+.window-header span:nth-child(2) {
+    background: #febc2e;
+}
+
+.window-header span:nth-child(3) {
+    background: #28c840;
+}
+
+.output-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
