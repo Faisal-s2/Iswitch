@@ -40,7 +40,14 @@
             </div>
 
 <pre><code>
-\restrict aUazp1vvKi6oc2eJQZPvh4vVw4bapRe8vV2AyNzxRk7u7qVlEYwNY4ooxlwnGcW
+--
+-- PostgreSQL database dump
+--
+
+\restrict RaEsQQwrsO3Bl7tgGh5toTTgQjVDcbL7sXt9a1z2jcUOJBgwsxiNj5zdk510acm
+
+-- Dumped from database version 18.6
+-- Dumped by pg_dump version 18.6
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -54,11 +61,20 @@ SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
 
+--
+-- Name: main; Type: SCHEMA; Schema: -; Owner: -
+--
+
 CREATE SCHEMA main;
+
 
 SET default_tablespace = '';
 
 SET default_table_access_method = heap;
+
+--
+-- Name: usr; Type: TABLE; Schema: main; Owner: -
+--
 
 CREATE TABLE main.usr (
     id integer,
@@ -70,45 +86,28 @@ CREATE TABLE main.usr (
     profesia character varying(50)
 );
 
-COPY main.usr (id, name, lastname, mail, address, city, profesia) FROM stdin;
-3	Olga	Fajnšmekrova	prefajnsmekrovtentim@gmail.com	Park Angelum	Kosice	HR
-0	Ruslan	Penkov	ruslan.penkov2007@gmail.com	Prazska 2	Kosice	DBA
-2	Jordan	Overtake	jordan.overtake@ukr.net	okolie banky č.2	Los Santos	Pravnik
-4	Ondrej	Tomas	ondrej.tomas@student.upjs.com	Horky	Vranov nad Toplou	HSE specialist
-1	Alexa	Kohracova	arga_majanan@gmail.com	namestie oslobotitelov	Kosice	šofer
-5	Roman	Haluska	roman.haluska1@upjs.sk	tulcik	Presov	DBA
-6	Jozef	Prles	jozef.prles23@gmail.com	Miami	USA	CFA
-8	Jozef	Prles	jozef.prles23@gmail.com	Miami	USA	Manager
-9	Marta	Juzna	marta.juzna@32	Raslavice	Presov	Upratovačka
-7	Sara	Novakova	saranovakova@gmail.com	Rakackeho22	Kosice	Stahovac
-\.
-
-GRANT ALL ON SCHEMA main TO "Roman";
-GRANT ALL ON SCHEMA main TO "Faisal";
-GRANT ALL ON SCHEMA main TO "Ondrej";
-
-GRANT ALL ON SCHEMA public TO cloudsqlsuperuser;
-GRANT USAGE ON SCHEMA public TO "Roman";
-GRANT USAGE ON SCHEMA public TO "Faisal";
-
-GRANT SELECT,INSERT,REFERENCES,DELETE,TRIGGER,TRUNCATE,UPDATE ON TABLE main.usr TO "Roman";
-GRANT SELECT,INSERT,REFERENCES,DELETE,TRIGGER,TRUNCATE,UPDATE ON TABLE main.usr TO "Faisal";
-GRANT SELECT,INSERT,REFERENCES,DELETE,TRIGGER,TRUNCATE,UPDATE ON TABLE main.usr TO "Ondrej";
-
 
 --
--- Name: DEFAULT PRIVILEGES FOR TABLES; Type: DEFAULT ACL; Schema: main; Owner: -
+-- Data for Name: usr; Type: TABLE DATA; Schema: main; Owner: -
 --
 
-ALTER DEFAULT PRIVILEGES FOR ROLE jormontora IN SCHEMA main GRANT SELECT,INSERT,DELETE,UPDATE ON TABLES TO "Roman";
-ALTER DEFAULT PRIVILEGES FOR ROLE jormontora IN SCHEMA main GRANT SELECT,INSERT,DELETE,UPDATE ON TABLES TO "Faisal";
+INSERT INTO main.usr (id, name, lastname, mail, address, city, profesia) VALUES (3, 'Olga', 'Fajn┼бmekrova', 'prefajnsmekrovtentim@gmail.com', 'Park Angelum', 'Kosice', 'HR');
+INSERT INTO main.usr (id, name, lastname, mail, address, city, profesia) VALUES (0, 'Ruslan', 'Penkov', 'ruslan.penkov2007@gmail.com', 'Prazska 2', 'Kosice', 'DBA');
+INSERT INTO main.usr (id, name, lastname, mail, address, city, profesia) VALUES (2, 'Jordan', 'Overtake', 'jordan.overtake@ukr.net', 'okolie banky ─Н.2', 'Los Santos', 'Pravnik');
+INSERT INTO main.usr (id, name, lastname, mail, address, city, profesia) VALUES (4, 'Ondrej', 'Tomas', 'ondrej.tomas@student.upjs.com', 'Horky', 'Vranov nad Toplou', 'HSE specialist');
+INSERT INTO main.usr (id, name, lastname, mail, address, city, profesia) VALUES (1, 'Alexa', 'Kohracova', 'arga_majanan@gmail.com', 'namestie oslobotitelov', 'Kosice', '┼бofer');
+INSERT INTO main.usr (id, name, lastname, mail, address, city, profesia) VALUES (5, 'Roman', 'Haluska', 'roman.haluska1@upjs.sk', 'tulcik', 'Presov', 'DBA');
+INSERT INTO main.usr (id, name, lastname, mail, address, city, profesia) VALUES (6, 'Jozef', 'Prles', 'jozef.prles23@gmail.com', 'Miami', 'USA', 'CFA');
+INSERT INTO main.usr (id, name, lastname, mail, address, city, profesia) VALUES (8, 'Jozef', 'Prles', 'jozef.prles23@gmail.com', 'Miami', 'USA', 'Manager');
+INSERT INTO main.usr (id, name, lastname, mail, address, city, profesia) VALUES (9, 'Marta', 'Juzna', 'marta.juzna@32', 'Raslavice', 'Presov', 'Upratova─Нka');
+INSERT INTO main.usr (id, name, lastname, mail, address, city, profesia) VALUES (7, 'Sara', 'Novakova', 'saranovakova@gmail.com', 'Rakackeho22', 'Kosice', 'Stahovac');
 
 
 --
 -- PostgreSQL database dump complete
 --
 
-\unrestrict aUazp1vvKi6oc2eJQZPvh4vVw4bapRe8vV2AyNzxRk7u7qVlEYwNY4ooxlwnGcW
+\unrestrict RaEsQQwrsO3Bl7tgGh5toTTgQjVDcbL7sXt9a1z2jcUOJBgwsxiNj5zdk510acm
 </code></pre>
 
         </div>
