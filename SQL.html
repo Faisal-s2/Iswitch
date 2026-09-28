@@ -131,8 +131,14 @@ INSERT INTO main.usr (id, name, lastname, mail, address, city, profesia) VALUES 
 
         <section class="example-command">
     <p>
-        Example command:
-        <span>SELECT * FROM customers;</span>
+        <strong>Úloha:</strong>
+        Napíšte SQL príkaz, ktorý vymaže z tabuľky <span>"usr"</span>
+        všetkých zamestnancov, ktorých profesia je <span>"HR"</span>.
+    </p>
+
+    <p class="solution">
+        Riešenie:
+        <span>DELETE FROM main.usr WHERE profesia = 'HR';</span>
     </p>
 </section>
 
