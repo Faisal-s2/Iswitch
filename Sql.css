@@ -194,3 +194,30 @@ footer{
     width: 100%;
     height: auto;
 }
+
+.example-command {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 1.5rem 2rem;
+    border-left: 4px solid var(--primary-color);
+    background: #f8fafc;
+    border-radius: 12px;
+}
+
+.example-command p {
+    margin: 0.8rem 0;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+.example-command span {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.solution {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
