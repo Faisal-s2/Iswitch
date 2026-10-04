@@ -150,6 +150,116 @@ INSERT INTO main.usr (id, name, lastname, mail, address, city, profesia) VALUES 
              class="output-image">
     </div>
 </section>
+        <section class="script-section">
+    <div class="files-grid">
+
+        <!-- DDL -->
+        <div class="file-card">
+            <div class="file-card-header">
+                <div>
+                    <h2>DDL.sql</h2>
+                    <p>Database structure and schema creation.</p>
+                </div>
+
+                ./DDL.sql
+                    Download
+                </a>
+            </div>
+
+            <div class="file-type ddl">DDL</div>
+
+            <div class="file-preview">
+                <h4>Example</h4>
+<pre><code>CREATE TABLE main.usr (
+    id INTEGER,
+    name VARCHAR(20),
+    lastname VARCHAR(20)
+);
+</code></pre>
+                <p>
+                    Additional table definitions are available in the downloadable file.
+                </p>
+            </div>
+        </div>
+
+        <!-- DML -->
+        <div class="file-card">
+            <div class="file-card-header">
+                <div>
+                    <h2>DML.sql</h2>
+                    <p>Data insertion and manipulation.</p>
+                </div>
+
+                ./DML.sql
+                    Download
+                </a>
+            </div>
+
+            <div class="file-type dml">DML</div>
+
+            <div class="file-preview">
+                <h4>Example</h4>
+<pre><code>INSERT INTO main.usr
+(id, name, lastname)
+VALUES
+(1, 'Alexa', 'Kohracova');
+</code></pre>
+                <p>
+                    The full data population script can be downloaded.
+                </p>
+            </div>
+        </div>
+
+        <!-- DQL -->
+        <div class="file-card">
+            <div class="file-card-header">
+                <div>
+                    <h2>DQL.sql</h2>
+                    <p>Tasks and SELECT query solutions.</p>
+                </div>
+
+                ./DQL.sql
+                    Download
+                </a>
+            </div>
+
+            <div class="file-type dql">DQL</div>
+
+            <div class="file-preview">
+                <h4>Example Task</h4>
+
+<pre><code>-- Show all users from Kosice
+
+SELECT name, lastname, city
+FROM main.usr
+WHERE city = 'Kosice'
+ORDER BY lastname;
+</code></pre>
+
+                <p>
+                    The complete assignment containing multiple tasks and solutions
+                    is available in the downloadable file.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+document.querySelectorAll(".file-card").forEach(card => {
+
+    card.addEventListener("click", function(e) {
+
+        if (e.target.closest(".file-download-btn")) {
+            return;
+        }
+
+        this.classList.toggle("active");
+    });
+
+});
+</script>
 
 <footer>
     <p>Database Systems • Startup Project • 2026</p>
